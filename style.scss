@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap');
+
+/***************
+variables
+**************/
+$fontFamily: 'Pontano Sans', sans-serif;
+$fontSize: 16px;
+$yellow: #f3cd52;
+$darkGray: #333;
+$white: #fff;
+$black: #000;
+$lightGray: rgba(255, 255, 255, 0.4);
+$transition: 0.4s ease;
+$padding: 60px 0;
+
+/***************
+mixins
+**************/
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+@mixin btn {
+    border: none;
+    background: $yellow;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        background: $white;
+    }
+}
+
+/***************
+basic styles
+**************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    background: $darkGray;
+    line-height: 1.7;
+    color: $lightGray;
+}
+.container {
+    width: 72%;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    font-size: inherit;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+
+/***************
+nav
+**************/
+nav {
+    background: $yellow;
+    color: $black;
+    font-size: 1.1rem;
+    padding: 25px 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    ul {
+        @include flex(center, center, row);
+        li {
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: $transition;
+            padding: 30px 40px;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/***************
+header
+**************/
+header {
+    padding-top: 60px;
+    background: $yellow;
+    article {
+        @include flex(center, center, column);
+        h1 {
+            font-size: 3rem;
+            color: $black;
+            line-height: 1;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        h5 {
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            color: $darkGray;
+        }
+        div {
+            width: 100%;
+            background: $white;
+            padding: 30px 30px 0;
+                img {
+                    width: 100%;
+                    display: block;
+                    opacity: .9;
+                }
+        }
+        
+    }
+}
