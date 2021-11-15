@@ -28,6 +28,12 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+}
+
 a {
   text-decoration: none;
   font-size: inherit;
@@ -76,6 +82,12 @@ nav ul li {
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   padding: 30px 40px;
+}
+
+@media (max-width: 767px) {
+  nav ul li {
+    padding: 5px;
+  }
 }
 
 nav ul li:hover {
@@ -166,6 +178,15 @@ about
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  .about article {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+}
+
 .about article h3 {
   color: #fff;
   font-size: 2rem;
@@ -237,6 +258,15 @@ portfolio
       -ms-flex: 0 0 22%;
           flex: 0 0 22%;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .portfolio div article {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-bottom: 30px;
+  }
 }
 
 .portfolio div article img {
@@ -379,6 +409,12 @@ footer .icons a {
   background: #f3cd52;
   padding: 25px;
   margin-right: 50px;
+}
+
+@media (max-width: 767px) {
+  footer .icons a {
+    margin-right: 5px;
+  }
 }
 
 footer .icons i {

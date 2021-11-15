@@ -76,6 +76,9 @@ body {
 .container {
     width: 72%;
     margin: 0 auto;
+    @media (max-width: 767px) {
+        width: 90%;
+    }
 }
 a {
     text-decoration: none;
@@ -105,6 +108,9 @@ nav {
             text-transform: uppercase;
             transition: $transition;
             padding: 30px 40px;
+            @media (max-width: 767px) {
+                padding: 5px;
+            }
             &:hover {
                 transform: scale(1.1);
             }
@@ -157,6 +163,10 @@ about
     article {
         flex: 0 0 31%;
         text-align: center;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+        }
         h3 {
             @include h3;
         }
@@ -186,6 +196,10 @@ portfolio
         article {
             flex: 0 0 22%;
             text-align: center;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;
+                margin-bottom: 30px;
+            }
             img {
                 width: 100%;
             }
@@ -262,6 +276,9 @@ footer {
             background: $yellow;
             padding: 25px;
             margin-right: 50px;
+            @media (max-width: 767px) {
+                margin-right: 5px;
+            }
         }
         i {
             color: $darkGray;
