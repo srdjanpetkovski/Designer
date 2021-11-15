@@ -36,6 +36,27 @@ mixins
         background: $white;
     }
 }
+@mixin h3 {
+    color: $white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+@mixin p {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+@mixin h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: $white;
+    margin-bottom: 15px;
+}
+@mixin h6 {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
 
 /***************
 basic styles
@@ -69,13 +90,13 @@ li {
 nav
 **************/
 nav {
-    background: $yellow;
+    background: rgba($yellow, 0.9);
     color: $black;
     font-size: 1.1rem;
-    padding: 25px 0;
     position: fixed;
     text-align: center;
     width: 100%;
+    z-index: 2;
     ul {
         @include flex(center, center, row);
         li {
@@ -95,7 +116,7 @@ nav {
 header
 **************/
 header {
-    padding-top: 60px;
+    padding-top: 150px;
     background: $yellow;
     article {
         @include flex(center, center, column);
@@ -123,5 +144,144 @@ header {
                 }
         }
         
+    }
+}
+
+/***************
+about
+**************/
+.about {
+    padding: $padding;
+    @include flex(space-between, center, row);
+    border-bottom: 1px solid $lightGray;
+    article {
+        flex: 0 0 31%;
+        text-align: center;
+        h3 {
+            @include h3;
+        }
+        p {
+            @include p;
+        }
+        button {
+            @include btn;
+        }
+    }
+}
+
+/***************
+portfolio
+**************/
+.portfolio {
+    padding: $padding;
+    border-bottom: 1px solid $lightGray;
+    h2 {
+        @include h2;
+    }
+    h6 {
+        @include h6;
+    }
+    div {
+        @include flex(space-around, center, row);
+        article {
+            flex: 0 0 22%;
+            text-align: center;
+            img {
+                width: 100%;
+            }
+            h3 {
+                @include h3;
+            }
+            p {
+                @include p;
+            }
+            button {
+                @include btn;
+            }
+        }
+    }
+}
+
+/***************
+contact
+**************/
+.contact {
+    padding: $padding;
+    h2 {
+        @include h2;
+    }
+    h6 {
+        @include h6;
+    }
+    form{
+        @include flex(center, center, column);
+        max-width: 760px;
+        width: 100%;
+        margin: 0 auto;
+        input {
+            width: 100%;
+            background-color: #2e2e2e;
+            margin-bottom: 20px;
+            padding: 20px;
+            font-family: $fontFamily;
+            font-size: 1.2rem;
+            border: none;
+            font-weight: 600;
+        }
+        textarea {
+            width: 100%;
+            background-color: #2e2e2e;
+            margin-bottom: 20px;
+            padding: 20px;
+            font-family: $fontFamily;
+            font-size: 1.2rem;
+            border: none;
+            font-weight: 600;
+        }
+        button {
+            @include btn;
+        }
+    }
+}
+
+/***************
+footer
+**************/
+footer {
+    padding: $padding;
+    h2 {
+        @include h2;
+    }
+    h6 {
+        @include h6;
+    }
+    .icons {
+        text-align: center;
+        padding-top: 30px;
+        a {
+            background: $yellow;
+            padding: 25px;
+            margin-right: 50px;
+        }
+        i {
+            color: $darkGray;
+            font-size: 1.3rem;
+            transition: $transition;
+        }
+    }
+    hr {
+        border: none;
+        height: 1px;
+        background: $lightGray;
+        margin-top: 100px;
+    }
+    p {
+        text-align: center;
+        margin-top: 50px;
+        a {
+            &:hover {
+                color: $white;
+            }
+        }
     }
 }
